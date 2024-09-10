@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/view/login_signup_screens/create_account_fill_details.dart';
 import 'package:twitter_clone/view/utils/color_constants/color_constants.dart';
 import 'package:twitter_clone/view/utils/image_constants/image_constants.dart';
 
@@ -32,7 +33,7 @@ class MainSigninSignupScreen extends StatelessWidget {
             dividerSection(),
 
             // Create account button
-            createAccountButton(),
+            createAccountButton(context),
 
             const SizedBox(height: 20),
 
@@ -51,52 +52,53 @@ class MainSigninSignupScreen extends StatelessWidget {
     );
   }
 
-
-
-
-
-
-// Detailed Code 
-
-
-
+// Detailed Code
 
   Padding loginText() {
     return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          RichText(
+            text: const TextSpan(
+              text: 'Have an account already?',
               children: [
-                RichText(
-                  text: const TextSpan(
-                    text: 'Have an account already?',
-                    children: [
-                      TextSpan(
-                        text: 'Log in',
-                        style: TextStyle(color: ColorConstants.textBlue),
-                      ),
-                    ],
-                  ),
+                TextSpan(
+                  text: 'Log in',
+                  style: TextStyle(color: ColorConstants.textBlue),
                 ),
               ],
             ),
-          );
+          ),
+        ],
+      ),
+    );
   }
 
-  Padding createAccountButton() {
+  Padding createAccountButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20),
-      child: Container(
-        margin: const EdgeInsets.all(10.0),
-        height: 40,
-        decoration: BoxDecoration(
-          color: ColorConstants.mainWhite,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: const Center(
-          child: Text(
-            "Create account",
-            style: TextStyle(fontWeight: FontWeight.w500),
+      padding: EdgeInsets.only(left: 20, right: 20),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CreateAccountFillDetails(),
+              ));
+        },
+        child: Container(
+          margin: const EdgeInsets.all(10.0),
+          height: 40,
+          decoration: BoxDecoration(
+            color: ColorConstants.mainWhite,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: const Center(
+            child: Text(
+              "Create account",
+              style: TextStyle(fontWeight: FontWeight.w500),
+            ),
           ),
         ),
       ),
