@@ -120,7 +120,7 @@ class Dummydb {
       'userId': '@taylorswift',
       'postTime': '~9d',
       'tweetContent': "Excited for my upcoming album release!",
-      'commentCount': '450K',
+      'commentCount': '450M',
       'repostCount': '300K',
       'likeCount': '1M',
       'analyticsCount': '12M',
