@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // A timer to navigate to the next screen after 4 seconds
-    Timer(const Duration(seconds: 4), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(

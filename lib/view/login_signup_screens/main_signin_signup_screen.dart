@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/view/login_signup_screens/create_account/you_are_all_set.dart';
+
 import 'package:twitter_clone/view/login_signup_screens/create_account_fill_details.dart';
 import 'package:twitter_clone/view/utils/color_constants/color_constants.dart';
 import 'package:twitter_clone/view/utils/image_constants/image_constants.dart';
@@ -78,13 +80,13 @@ class MainSigninSignupScreen extends StatelessWidget {
 
   Padding createAccountButton(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, right: 20),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       child: InkWell(
         onTap: () {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => CreateAccountFillDetails(),
+                builder: (context) => const CreateAccountFillDetails(),
               ));
         },
         child: Container(
@@ -97,7 +99,8 @@ class MainSigninSignupScreen extends StatelessWidget {
           child: const Center(
             child: Text(
               "Create account",
-              style: TextStyle(fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  fontWeight: FontWeight.w500, color: ColorConstants.mainBlack),
             ),
           ),
         ),
@@ -195,30 +198,42 @@ class _googleSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
-      child: Container(
-        margin: const EdgeInsets.all(10.0),
-        height: 40,
-        decoration: BoxDecoration(
-          color: ColorConstants.mainWhite,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 30,
-              width: 30,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage(ImagesConstants.googlelogo),
-              )),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const YouAreAllSet(),
             ),
-            const SizedBox(width: 10),
-            const Text(
-              "Continue with Google",
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
-          ],
+          );
+        },
+        child: Container(
+          margin: const EdgeInsets.all(10.0),
+          height: 40,
+          decoration: BoxDecoration(
+            color: ColorConstants.mainWhite,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 30,
+                width: 30,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage(ImagesConstants.googlelogo),
+                )),
+              ),
+              const SizedBox(width: 10),
+              const Text(
+                "Continue with Google",
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: ColorConstants.mainBlack),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_clone/view/login_signup_screens/create_account/email_enter.dart';
+import 'package:twitter_clone/view/login_signup_screens/main_signin_signup_screen.dart';
 import 'package:twitter_clone/view/utils/color_constants/color_constants.dart';
 import 'package:twitter_clone/view/utils/image_constants/image_constants.dart';
 
@@ -35,10 +37,20 @@ class _CreateAccountFillDetailsState extends State<CreateAccountFillDetails> {
     return Scaffold(
         backgroundColor: ColorConstants.mainBlack,
         appBar: AppBar(
+          leading: InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainSigninSignupScreen(),
+                  ));
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
           backgroundColor: Colors.black,
           iconTheme: const IconThemeData(color: ColorConstants.mainWhite),
           title: SizedBox(
-            width: 210,
+            width: 250,
             child: Container(
               height: 50,
               decoration: const BoxDecoration(
@@ -80,10 +92,6 @@ class _CreateAccountFillDetailsState extends State<CreateAccountFillDetails> {
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
                       label: Text('Date of Birth'),
-                      suffixIcon: Icon(
-                        Icons.error,
-                        color: Colors.red,
-                      ),
                       labelStyle: TextStyle(color: Colors.grey),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
@@ -119,7 +127,13 @@ class _CreateAccountFillDetailsState extends State<CreateAccountFillDetails> {
             ),
             child: FloatingActionButton(
               backgroundColor: ColorConstants.mainWhite,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const EmailEnterScreen(),
+                    ));
+              },
               child: const Text(
                 'Next',
                 style: TextStyle(fontSize: 16),
@@ -135,10 +149,6 @@ class _CreateAccountFillDetailsState extends State<CreateAccountFillDetails> {
       keyboardType: TextInputType.number,
       decoration: const InputDecoration(
         label: Text('Phone Number'),
-        suffixIcon: Icon(
-          Icons.error,
-          color: ColorConstants.errorRed,
-        ),
         labelStyle: TextStyle(color: ColorConstants.mainGrey),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: ColorConstants.mainWhite),
@@ -161,10 +171,6 @@ class _CreateAccountFillDetailsState extends State<CreateAccountFillDetails> {
       style: const TextStyle(color: ColorConstants.mainWhite),
       decoration: const InputDecoration(
         label: Text('Name'),
-        suffixIcon: Icon(
-          Icons.check_circle,
-          color: ColorConstants.correctGreen,
-        ),
         labelStyle: TextStyle(color: ColorConstants.mainGrey),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: ColorConstants.mainWhite),
