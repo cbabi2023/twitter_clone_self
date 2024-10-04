@@ -3,7 +3,7 @@ import 'package:twitter_clone/view/home_screen/home_page.dart';
 import 'package:twitter_clone/view/utils/color_constants/color_constants.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Bottom Navigation Bar Example',
       home: HomeScreen(),
     );

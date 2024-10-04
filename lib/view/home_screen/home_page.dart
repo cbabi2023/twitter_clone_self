@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         length: 2,
         child: Scaffold(
           floatingActionButton: Container(
-            margin: const EdgeInsets.only(bottom: 20, right: 10),
+            margin: const EdgeInsets.only(bottom: 10, right: 10),
             child: FloatingActionButton(
               backgroundColor: ColorConstants.bordersideBlue,
               onPressed: () {
@@ -27,13 +27,13 @@ class HomePage extends StatelessWidget {
                       builder: (context) => const HomeScreen(),
                     ));
               },
-              child: const Icon(
-                Icons.add,
-                color: ColorConstants.mainWhite,
-              ),
               shape: RoundedRectangleBorder(
                 borderRadius:
                     BorderRadius.circular(30), // Adjust the radius as needed
+              ),
+              child: const Icon(
+                Icons.add,
+                color: ColorConstants.mainWhite,
               ),
             ),
           ),
@@ -87,6 +87,10 @@ class ForyouTab extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => SingleTweetScreen(
+                    commentCount: tweet['commentCount'],
+                    repostCount: tweet['repostCount'],
+                    likeCount: tweet['likeCount'],
+                    analyticsCount: tweet['analyticsCount'],
                     profileImageUrl: tweet['profileImageUrl'],
                     authorName: tweet['authorName'],
                     tweetContent: tweet['tweetContent'],

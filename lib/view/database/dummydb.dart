@@ -58,7 +58,8 @@ class Dummydb {
       'repostCount': '180K',
       'likeCount': '600K',
       'analyticsCount': '6M',
-      'mediaUrl': '',
+      'mediaUrl':
+          'https://wndw.media/wp-content/uploads/AMZN-Fresh-poster.jpeg',
     },
     {
       'profileImageUrl':

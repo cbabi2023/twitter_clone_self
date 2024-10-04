@@ -140,7 +140,7 @@ class _BuildTweetBoxState extends State<BuildTweetBox> {
                       onTap: () {
                         // Implement your "Read more" functionality here, such as navigating to a detailed view
                       },
-                      child: Text(
+                      child: const Text(
                         'Read more',
                         style: TextStyle(
                           color: Colors.blue, // Use your desired blue color
