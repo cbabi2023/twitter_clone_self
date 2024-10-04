@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/view/database/dummydb.dart';
+import 'package:twitter_clone/view/global_items/common_components.dart';
 import 'package:twitter_clone/view/global_items/tweet_template.dart';
 
 import 'package:twitter_clone/view/utils/color_constants/color_constants.dart';
@@ -284,34 +285,12 @@ class _AnalaysisValuesForReadingState extends State<AnalaysisValuesForReading> {
 
         // most Relevant Replies || more functions with replies
 
-        const RepliesWidgetFunctions(),
+         RepliesWidgetFunctions(
+          textValue: 'Most relevant replies ',
+          iconValue: Icons.keyboard_arrow_down,
+        ),
 
         // Replies sections
-      ],
-    );
-  }
-}
-
-class RepliesWidgetFunctions extends StatelessWidget {
-  const RepliesWidgetFunctions({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Text(
-          'Most relevant replies ',
-          style: TextStyle(
-            fontWeight: FontWeight.normal,
-            fontSize: 15,
-          ),
-        ),
-        Icon(
-          Icons.keyboard_arrow_down,
-          color: ColorConstants.mainWhite,
-        )
       ],
     );
   }

@@ -10,24 +10,29 @@ class XtopappBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CircleAvatar(
-            radius: 15,
-            backgroundImage: AssetImage(ImagesConstants.googlelogo),
-            backgroundColor: ColorConstants.mainWhite,
+          InkWell(
+            onTap: () {
+              return Scaffold.of(context).openDrawer();
+            },
+            child: const CircleAvatar(
+              radius: 15,
+              backgroundImage: AssetImage(ImagesConstants.googlelogo),
+              backgroundColor: ColorConstants.mainWhite,
+            ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          FaIcon(
+          const FaIcon(
             FontAwesomeIcons.xTwitter,
             color: Colors.white,
           ),
-          Row(
+          const Row(
             children: [
               Text(
                 'Upgrade',
@@ -84,3 +89,39 @@ class ActivityButtons extends StatelessWidget {
   }
 }
 
+class RepliesWidgetFunctions extends StatelessWidget {
+  final String textValue;
+  final IconData iconValue;
+  bool? spaceBetween;
+  bool? textValueBold;
+  RepliesWidgetFunctions({
+    super.key,
+    required this.textValue,
+    required this.iconValue,
+    this.spaceBetween,
+    this.textValueBold,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: spaceBetween == true
+          ? MainAxisAlignment.spaceBetween
+          : MainAxisAlignment.start,
+      children: [
+        Text(
+          textValue,
+          style: TextStyle(
+            fontWeight:
+                textValueBold == true ? FontWeight.bold : FontWeight.normal,
+            fontSize: 15,
+          ),
+        ),
+        Icon(
+          iconValue,
+          color: ColorConstants.mainWhite,
+        )
+      ],
+    );
+  }
+}
