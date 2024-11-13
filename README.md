@@ -1,23 +1,9 @@
-# twitter_clone
 
-A new Flutter project.
-
-## Getting Started
-### Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# To-Do List App with Task Prioritization
+Interview Task Project.
 
 
-### Features of Todo App
+## Features of Todo App
 
 - Add new tasks with information like a title, description, and priority level (e.g., High, Medium, Low).
 - View a list of tasks and sort them by priority.
@@ -33,6 +19,3 @@ samples, guidance on mobile development, and a full API reference.
 4. Description: A text field for any additional details about the task.
 5. Priority Level: A dropdown menu or radio buttons to select the tasks priority (High, Medium, Low).
 6. Add a button to save the task. When the button is pressed, the task should appear in the main list of tasks
-
-
-
